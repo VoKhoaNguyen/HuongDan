@@ -18,14 +18,14 @@
 
         /* --- Thanh điều hướng (Sidebar) bên trái --- */
         .sidebar {
-            width: 280px; /* Rộng hơn một chút để chứa emoji */
+            width: 280px;
             background-color: #ffffff;
             height: 100vh;
             position: fixed;
             border-right: 1px solid #e0e0e0;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto; /* Tự động cuộn nếu menu quá dài */
+            overflow-y: auto;
         }
 
         .sidebar h2 {
@@ -34,7 +34,7 @@
             padding-bottom: 10px;
         }
 
-        /* --- Nút bấm danh mục (QUAN TRỌNG) --- */
+        /* --- SỬA LỖI 1: Căn chỉnh mũi tên --- */
         .category-toggle {
             background-color: #f0f0f0;
             color: #333;
@@ -49,45 +49,45 @@
             border-radius: 5px;
             margin-top: 15px;
             transition: background-color 0.3s;
+            
+            /* Thêm Flexbox để căn chỉnh */
+            display: flex;
+            justify-content: space-between; /* Đẩy 2 item ra 2 đầu */
+            align-items: center; /* Căn giữa theo chiều dọc */
         }
 
         .category-toggle:hover {
             background-color: #ddd;
         }
         
-        /* Thêm mũi tên chỉ xuống */
         .category-toggle::after {
-            content: '\25BC'; /* Ký tự mũi tên xuống */
+            content: '\25BC'; /* Mũi tên xuống */
             font-size: 12px;
-            float: right;
+            /* Bỏ float: right */
+            margin-left: 10px; /* Khoảng cách giữa chữ và mũi tên */
             transition: transform 0.3s;
         }
         
-        /* Khi active (mở), mũi tên xoay lên */
         .category-toggle.active::after {
             transform: rotate(180deg);
         }
+        /* --- Hết SỬA LỖI 1 --- */
 
-        /* --- Menu con (bị ẩn) (QUAN TRỌNG) --- */
+
+        /* --- Menu con (bị ẩn) --- */
         .submenu {
             padding: 0;
             list-style-type: none;
             background-color: #fafafa;
-            
-            /* Logic ẩn/hiện bằng max-height để tạo animation */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            
-            /* Thụt lề các mục con */
             padding-left: 20px; 
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
         
-        /* Lớp .active sẽ được JS thêm vào để hiện menu */
         .submenu.active {
-            /* 500px là chiều cao đủ lớn, bạn có thể tăng nếu menu con dài hơn */
             max-height: 500px; 
             padding-top: 10px;
             padding-bottom: 10px;
@@ -103,7 +103,8 @@
             transition: background-color 0.2s;
         }
 
-        .submenu li a:hover {
+        .submenu li a:hover,
+        .sidebar ul li a.active { /* CSS cho trang đang được chọn */
             background-color: #e6f0f7;
             color: #005A9C;
         }
@@ -111,14 +112,36 @@
         /* --- Khung nội dung chính bên phải --- */
         .content {
             flex-grow: 1;
-            margin-left: 280px; /* Bằng chiều rộng sidebar */
+            margin-left: 280px;
             padding: 40px;
             box-sizing: border-box;
+
+            /* --- SỬA LỖI 2: Căn giữa nội dung --- */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa theo chiều ngang */
+            text-align: center; /* Căn giữa chữ */
+            /* --- Hết SỬA LỖI 2 --- */
         }
 
         .content h1 {
             color: #005A9C;
         }
+        
+        /* --- SỬA LỖI 4: CSS cho khu vực ảnh --- */
+        .function-gallery {
+            margin-top: 30px;
+            width: 90%; /* Chiều rộng của khung chứa ảnh */
+        }
+        
+        .function-gallery img {
+            width: 100%; /* Ảnh tự co giãn theo khung */
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        /* --- Hết SỬA LỖI 4 --- */
 
     </style>
 </head>
@@ -128,8 +151,8 @@
         <h2>Menu Hướng dẫn</h2>
 
         <div>
-            <button class="category-toggle">📦 Quản lý Danh mục</button>
-            <ul class="submenu">
+            <button class="category-toggle active">📦 Quản lý Danh mục</button>
+            <ul class="submenu active">
                 <li><a href="sanpham.html">Sản phẩm</a></li>
                 <li><a href="nhacungcap.html">Nhà cung cấp</a></li>
                 <li><a href="khachhang.html">Khách hàng</a></li>
@@ -155,34 +178,35 @@
                 <li><a href="tonkho.html">Tồn kho</a></li>
             </ul>
         </div>
+        
+        <button class="category-toggle" onclick="window.location.href='index.html'" style="margin-top: 30px; background-color: #005A9C; color: white;">🏠 Giới thiệu chung</button>
 
     </nav>
 
     <main class="content">
+    
         <h1>Chào mừng đến với Hướng dẫn sử dụng Cửa hàng Nông dược</h1>
         
-        <p>Vui lòng chọn một mục từ thanh menu bên trái để xem chi tiết.</p>
-        <p>Khi bạn bấm vào một danh mục (ví dụ: "Quản lý Danh mục"), các mục con sẽ tự động xổ ra.</p>
+        <div class="function-gallery">
+            <p>Đây là giao diện các chức năng chính của phần mềm:</p>
+            
+            <img src="toolbar-image.png" alt="Thanh công cụ các chức năng">
+        </div>
+        
     </main>
     
     
     <script>
-        // Lấy tất cả các nút bấm danh mục
         var toggles = document.querySelectorAll(".category-toggle");
 
-        // Lặp qua từng nút
         toggles.forEach(function(toggle) {
-            
-            // Thêm sự kiện 'click'
             toggle.addEventListener("click", function() {
                 
-                // Thêm/xóa lớp 'active' trên chính nút bấm (để xoay mũi tên)
+                // Bỏ qua nếu là nút "Giới thiệu chung"
+                if (this.getAttribute('onclick')) return;
+
                 this.classList.toggle("active");
-                
-                // Lấy menu con (là phần tử <ul> ngay sau nút bấm)
                 var submenu = this.nextElementSibling;
-                
-                // Thêm/xóa lớp 'active' trên menu con (để hiện/ẩn)
                 submenu.classList.toggle("active");
             });
         });
