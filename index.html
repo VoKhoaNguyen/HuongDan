@@ -113,12 +113,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* text-align: center; */ /* Bỏ căn giữa text cho từng phần tử nhỏ */
         }
 
         .content h1 {
             color: #005A9C;
-            text-align: center; /* Căn giữa tiêu đề chính */
+            text-align: center;
             margin-bottom: 30px;
         }
         
@@ -129,9 +128,9 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-bottom: 40px;
             padding: 30px;
-            width: 90%; /* Chiếm phần lớn chiều rộng */
-            max-width: 900px; /* Giới hạn chiều rộng tối đa */
-            text-align: left; /* Căn trái nội dung trong từng section */
+            width: 90%;
+            max-width: 900px;
+            text-align: left;
         }
 
         .function-section h2 {
@@ -140,6 +139,10 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-size: 24px;
+        }
+
+        .function-section h3 {
+             margin-top: 30px; /* Thêm khoảng cách cho các tiêu đề phụ */
         }
 
         .function-section p {
@@ -183,6 +186,7 @@
                 <li><a href="banle.html">Bán lẻ</a></li>
                 <li><a href="phieuchi.html">Phiếu chi</a></li>
                 <li><a href="phieuthu.html">Phiếu thu</a></li>
+                <li><a href="dunokh.html">Tổng hợp dư nợ</a></li>
             </ul>
         </div>
         
@@ -190,6 +194,10 @@
             <button class="category-toggle">📊 Báo cáo</button>
             <ul class="submenu">
                 <li><a href="tonkho.html">Tồn kho</a></li>
+                <li><a href="doanhthu.html">Doanh thu</a></li>
+                <li><a href="sanphamhethan.html">Sản phẩm hết hạn</a></li>
+                <li><a href="dichvuphatsinh.html">Dịch vụ phát sinh</a></li>
+                <li><a href="hoadongiamgia.html">Hóa đơn giảm giá</a></li>
             </ul>
         </div>
         
@@ -245,17 +253,17 @@
             <h3>Nhập hàng</h3>
             <p>Lập phiếu nhập kho khi nhập hàng từ nhà cung cấp.</p>
             <img src="Images/nhaphang1.jpg" alt="Danh sách phiếu Nhập hàng">
-			<img src="Images/nhaphang2.jpg" alt="Giao diện lập phiếu Nhập hàng">
+            <img src="Images/nhaphang2.jpg" alt="Giao diện lập phiếu Nhập hàng">
 
             <h3>Bán sỉ</h3>
             <p>Lập phiếu bán hàng cho các đại lý hoặc khách hàng mua sỉ.</p>
             <img src="Images/bansi1.jpg" alt="Danh sách phiếu Bán sỉ">
-			<img src="Images/bansi2.jpg" alt="Giao diện lập phiếu Bán sỉ">
+            <img src="Images/bansi2.jpg" alt="Giao diện lập phiếu Bán sỉ">
 
             <h3>Bán lẻ</h3>
             <p>Lập phiếu bán hàng cho khách hàng lẻ.</p>
             <img src="Images/banle1.jpg" alt="Danh sách phiếu Bán lẻ">
-			<img src="Images/banle2.jpg" alt="Giao diện lập phiếu Bán lẻ">
+            <img src="Images/banle2.jpg" alt="Giao diện lập phiếu Bán lẻ">
 
             <h3>Phiếu chi</h3>
             <p>Ghi lại các khoản chi tiêu của cửa hàng.</p>
@@ -264,6 +272,10 @@
             <h3>Phiếu thu</h3>
             <p>Ghi lại các khoản thu tiền từ khách hàng hoặc các nguồn khác.</p>
             <img src="Images/phieuthu.jpg" alt="Giao diện lập Phiếu thu">
+            
+            <h3>Tổng hợp dư nợ</h3>
+            <p>Tổng hợp và xem công nợ của tất cả khách hàng.</p>
+            <img src="Images/dunokh.jpg" alt="Giao diện báo cáo Tổng hợp dư nợ">
         </div>
 
         <div class="function-section">
@@ -273,6 +285,23 @@
             <h3>Tồn kho</h3>
             <p>Xem báo cáo số lượng tồn kho của tất cả các sản phẩm.</p>
             <img src="Images/tonkho.jpg" alt="Giao diện báo cáo Tồn kho">
+            
+            <h3>Doanh Thu</h3>
+            <p>Xem báo cáo doanh thu.</p>
+            <img src="Images/doanhthu.jpg" alt="Giao diện báo cáo Doanh thu">
+            
+            <h3>Sản phẩm hết hạn</h3>
+            <p>Kiểm tra và báo cáo các sản phẩm sắp hoặc đã hết hạn sử dụng.</p>
+            <img src="Images/sanphamhethan.jpg" alt="Giao diện báo cáo Sản phẩm hết hạn">
+
+            <h3>Dịch vụ phát sinh</h3>
+            <p>Báo cáo các dịch vụ phát sinh đã thực hiện (ví dụ: vận chuyển, tư vấn).</p>
+            <img src="Images/dichvuphatsinh.jpg" alt="Giao diện báo cáo Dịch vụ phát sinh">
+
+            <h3>Hóa đơn giảm giá</h3>
+            <p>Liệt kê các hóa đơn đã được áp dụng giảm giá hoặc chiết khấu.</p>
+            <img src="Images/hoadongiamgia.jpg" alt="Giao diện báo cáo Hóa đơn giảm giá">
+            
         </div>
         
     </main>
